@@ -19,7 +19,7 @@ struct ContentView: View {
             .navigationTitle("Home")
         }
         .fullScreenCover(isPresented: $shouldShowOnboarding, content: {
-            OnboardingView()
+            OnboardingView(shouldShowOnboarding: $shouldShowOnboarding)
         })
     }
 }
@@ -27,39 +27,81 @@ struct ContentView: View {
 // Onboarding
 
 struct OnboardingView: View {
+    @Binding var shouldShowOnboarding: Bool
+    
     var body: some View {
         TabView{
-            PageView()
-                .background(Color.red)
+            PageView(title: "Push Notifications",
+                     subtitle: "Enable notifications to stay up to date with friends",
+                     imageName: "bell",
+                     showDismissButton: false,
+                     shouldShowOnboarding: $shouldShowOnboarding
+            )
+              
             
-            PageView()
-                .background(Color.blue)
+            PageView(title: "Bookmarks",
+                     subtitle: "Save your favorite pieces of content.",
+                     imageName: "bookmark",
+                     showDismissButton: false,
+                     shouldShowOnboarding: $shouldShowOnboarding
+            )
             
-            PageView()
-                .background(Color.green)
+            PageView(title: "Flights",
+                     subtitle: "Book flights to the places you want to go.",
+                     imageName: "airplane",
+                     showDismissButton: false,
+                     shouldShowOnboarding: $shouldShowOnboarding
+            )
             
-            PageView()
-                .background(Color.orange)
+            PageView(title: "Home",
+                     subtitle: "Go home wherever your might be",
+                     imageName: "house",
+                     showDismissButton: true,
+                     shouldShowOnboarding: $shouldShowOnboarding
+            )
+            
         }
         .tabViewStyle(PageTabViewStyle())
     }
 }
 
 struct PageView: View {
+    let title: String
+    let subtitle: String
+    let imageName: String
+    let showDismissButton: Bool
+    @Binding var shouldShowOnboarding: Bool
+    
     var body: some View {
         VStack {
-            Image(systemName: "bell")
+            Image(systemName: imageName)
                 .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 150, height: 150)
                 .padding()
             
-            Text("Push Notifications")
-                .font(.system(size: 42))
+            Text(title)
+                .font(.system(size: 32))
                 .padding()
             
-            Text("Enable notifications to stay up to date with our app.")
-                .font(.system(size: 30))
+            Text(subtitle)
+                .font(.system(size: 24))
+                .multilineTextAlignment(.center)
                 .foregroundColor(Color(.secondaryLabel))
                 .padding()
+            
+            if(showDismissButton){
+                Button(action: {
+                    shouldShowOnboarding.toggle()
+                }, label: {
+                    Text("Get Started")
+                        .bold()
+                        .foregroundColor(Color.white)
+                        .frame(width: 200, height: 50)
+                        .background(Color.green)
+                        .cornerRadius(6)
+                })
+            }
         }
     }
 }
