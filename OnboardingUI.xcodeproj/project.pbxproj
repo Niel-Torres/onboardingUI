@@ -11,6 +11,7 @@
 		C51D7DAF2B06DFEB00BA3452 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D7DAE2B06DFEB00BA3452 /* ContentView.swift */; };
 		C51D7DB12B06DFED00BA3452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51D7DB02B06DFED00BA3452 /* Assets.xcassets */; };
 		C51D7DB42B06DFED00BA3452 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C51D7DB32B06DFED00BA3452 /* Preview Assets.xcassets */; };
+		C51D7DBB2B06F06400BA3452 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51D7DBA2B06F06400BA3452 /* Onboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C51D7DAE2B06DFEB00BA3452 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C51D7DB02B06DFED00BA3452 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51D7DB32B06DFED00BA3452 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C51D7DBA2B06F06400BA3452 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				C51D7DAC2B06DFEB00BA3452 /* OnboardingUIApp.swift */,
 				C51D7DAE2B06DFEB00BA3452 /* ContentView.swift */,
+				C51D7DBA2B06F06400BA3452 /* Onboarding.swift */,
 				C51D7DB02B06DFED00BA3452 /* Assets.xcassets */,
 				C51D7DB22B06DFED00BA3452 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C51D7DBB2B06F06400BA3452 /* Onboarding.swift in Sources */,
 				C51D7DAF2B06DFEB00BA3452 /* ContentView.swift in Sources */,
 				C51D7DAD2B06DFEB00BA3452 /* OnboardingUIApp.swift in Sources */,
 			);
