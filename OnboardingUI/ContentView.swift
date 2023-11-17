@@ -29,19 +29,38 @@ struct ContentView: View {
 struct OnboardingView: View {
     var body: some View {
         TabView{
-            Text("first")
+            PageView()
                 .background(Color.red)
             
-            Text("Second")
+            PageView()
                 .background(Color.blue)
             
-            Text("third")
+            PageView()
                 .background(Color.green)
             
-            Text("fourth")
+            PageView()
                 .background(Color.orange)
         }
         .tabViewStyle(PageTabViewStyle())
+    }
+}
+
+struct PageView: View {
+    var body: some View {
+        VStack {
+            Image(systemName: "bell")
+                .resizable()
+                .padding()
+            
+            Text("Push Notifications")
+                .font(.system(size: 42))
+                .padding()
+            
+            Text("Enable notifications to stay up to date with our app.")
+                .font(.system(size: 30))
+                .foregroundColor(Color(.secondaryLabel))
+                .padding()
+        }
     }
 }
 
