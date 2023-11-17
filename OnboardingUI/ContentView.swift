@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var shouldShowOnboarding: Bool = true
-    
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+
     var body: some View {
         NavigationView {
             VStack{
